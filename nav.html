@@ -1,0 +1,59 @@
+<section class="head_section">
+    <div class="navbar">
+        <div class="left_part">
+            <p class="name_logo">TravelKaro</p>
+            <p class="hamburger" id="hamburger">&#9776;</p>
+        </div>
+        <div class="right_part">
+            <ul>
+                <li>Home</li>
+                <li>Rooms</li>
+                <li>About Us</li>
+                <li>Contact</li>
+                <!-- <p class="hamburger">&#9776;</p> -->
+            </ul>
+            <!-- <p class="hamburger">&#9776;</p> -->
+        </div>
+    </div>
+
+    <div class="slide_show" id="slide_show">
+        <div class="slide_content" id="slide_content">
+            <div class="slide_text">
+                <p class="slide_para" id="slide_para">Some text</p>
+                <p class="slide_title" id="slide_title">Some detailed text</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+    var hamburger = document.querySelector("#hamburger");
+    hamburger.addEventListener("click", show_nav);
+    var nav = document.querySelector(".right_part");
+    // var cancel = document.querySelector(".cancel");
+
+    function show_nav() {
+        // console.log(nav.style.display)
+        if (nav.style.display == "table-column") {
+            nav.style.display = "flex";
+            hamburger.innerHTML = "&#10006;"
+                // console.log("block")
+                // hamburger.addEventListener("click", close);
+        } else {
+            nav.style.display = "table-column";
+            // nav.style.top = "-100%";
+            hamburger.innerHTML = "&#9776"
+                // console.log("none")
+
+        }
+
+    }
+
+    function close() {
+        console.log("cancel clicked")
+        nav.style.display = "none";
+        hamburger.innerHTML = "&#9776"
+    }
+</script>
