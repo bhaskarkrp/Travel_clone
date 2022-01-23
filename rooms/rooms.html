@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body p {
+            font-family: "Poppins", Arial, sans-serif;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        figure {
+            font-family: "Playfair Display", Times, serif;
+        }
+        
+        .navbar {
+            width: max-width;
+            height: 80px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            place-items: center;
+            cursor: pointer;
+        }
+        
+        .left_part {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .left_part p {
+            font-size: 1.9em;
+            font-weight: bolder;
+            font-family: none;
+        }
+        
+        .hamburger {
+            font-size: 1em;
+        }
+        
+        .left_part .hamburger {
+            position: absolute;
+            right: 0;
+            display: none;
+        }
+        
+        .right_part ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .right_part li a {
+            margin: 0px 30px;
+            color: rgb(61, 59, 59);
+        }
+        
+        @media screen and (max-width: 700px) {
+            .navbar {
+                height: max-content;
+                /* position: fixed; */
+                display: block;
+            }
+            .left_part {
+                margin: 15px;
+            }
+            .right_part {
+                display: none;
+                transition: top 1s ease;
+            }
+            .right_part li {
+                text-align: center;
+                font-size: 1.5em;
+                margin: 20px;
+            }
+            .left_part .hamburger {
+                display: block;
+            }
+            .slide_para {
+                /* width: max-content; */
+                font-size: 1em;
+            }
+            .slide_title {
+                font-size: 1.5em;
+            }
+            .right_part ul {
+                display: block;
+                margin: auto;
+            }
+            .room_1_text {
+                width: fit-content;
+            }
+        }
+        
+        #above_background_img {
+            position: relative;
+            /* width: fit-content; */
+            top: 10%;
+            height: fit-content;
+            width: 100%;
+        }
+        
+        #img_background_above {
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            color: #fff;
+            height: 35rem;
+            width: 100%;
+        }
+        
+        #color_for_above_img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+        }
+        
+        #text_for_above_img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+        
+        @media screen and (min-width: 1000px) {
+            #text_for_above_img h3 {
+                font-size: 2rem;
+            }
+            #text_for_above_img h1 {
+                font-size: 4rem;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            /* #text_for_above_img{
+        margin: auto;
+        font-size: 50%;
+    } */
+            #img_background_above {
+                height: auto;
+                width: 100%
+            }
+            /* #above_background_img {} */
+        }
+        
+        #about_us_infor {
+            position: relative;
+            display: grid;
+            align-content: center;
+            grid-template-columns: 40% 50%;
+            gap: 7rem;
+            align-items: center;
+            width: 86%;
+            margin-top: 5rem;
+            padding: 2rem;
+            margin-left: 5%;
+        }
+        
+        #img_for_infor {
+            height: max-content;
+            float: right;
+        }
+        
+        #img_size_change {
+            width: 100%;
+            height: 26rem;
+            float: right;
+        }
+        
+        #text_for_infor {
+            color: #595959;
+        }
+        
+        #text_for_infor h1 {
+            display: inline;
+        }
+        
+        @media screen and (max-width: 1000px) {
+            #about_us_infor {
+                display: flex;
+                flex-direction: column;
+                gap: 10%;
+            }
+            #img_size_change {
+                height: auto;
+            }
+        }
+        
+        @media screen and (max-width: 500px) {
+            #text_for_infor h1 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+            #text_for_infor p {
+                font-size: 13px;
+            }
+        }
+        
+        #review_outer_box {
+            background: #fafafa;
+            width: 100%;
+            padding: 6rem;
+            margin-top: 10%;
+            text-align: center;
+        }
+        
+        .checked {
+            color: orange;
+        }
+        
+        #review_outer_box span {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .container_of_card {
+            display: flex;
+            flex-direction: rows;
+        }
+        
+        .card_customer {
+            color: #595959;
+            background-color: #fff;
+            margin: 2%;
+            padding: 1%;
+        }
+        
+        .card_customer p {
+            color: #595000;
+        }
+        
+        .img_of_customer {
+            height: 10rem;
+            width: 50%;
+            border-radius: 100%;
+        }
+        
+        @media screen and (max-width: 1000px) {
+            .container_of_card {
+                display: flex;
+                flex-direction: column;
+                width: auto;
+                justify-content: center;
+            }
+            .card_customer {
+                padding: 2%;
+                height: auto;
+            }
+        }
+        
+        @media screen and (max-width: 550px) {
+            #review_outer_box h1 {
+                font-size: 20px;
+            }
+            #review_outer_box p {
+                font-size: 13px;
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            .card_customer {
+                padding: 4%;
+                height: auto;
+            }
+            .card_customer h4 {
+                font-size: 12px;
+            }
+            .card_customer h1 {
+                font-size: 15px;
+            }
+            .card_customer p {
+                font-size: 9px;
+            }
+        }
+        /* footer code start here */
+        
+        #footer_image_container {
+            position: relative;
+            width: fit-content;
+            top: 10%;
+            height: 35rem;
+            width: 100%;
+        }
+        
+        #image_background_footer {
+            position: absolute;
+            height: 35rem;
+            width: 100%;
+            border: 3px solid black;
+        }
+        
+        #opacity_of_footer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            font-weight: 700;
+        }
+        
+        #text_over_footer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+        
+        .text_over_sign {
+            font-size: 1rem;
+        }
+        
+        @media screen and (max-width: 768px) {
+            /* #text_for_above_img{
+        margin: auto;
+        font-size: 50%;
+    } */
+            #imageContainer {
+                width: 100%;
+                display: block;
+                flex-wrap: wrap;
+                align-content: center;
+                text-align: center;
+                color: black;
+                margin-top: 5rem;
+                margin-bottom: 5rem;
+            }
+            #containerRooms {
+                width: 100%;
+                display: block;
+                justify-content: center;
+                background-color: ghostwhite;
+            }
+            .rooms {
+                display: block;
+            }
+            #img_background_above {
+                height: auto;
+                width: 100%
+            }
+            .img_of_customer {
+                height: auto;
+            }
+        }
+        
+        input[type=text] {
+            font-size: 18px;
+            width: 70%;
+            padding: .4em;
+            border: none;
+            border: 2px solid #fff;
+            background: #fff;
+            color: #333!important;
+        }
+        
+        input[type=submit] {
+            background-color: #4586FF;
+            border: 2px solid #4586FF;
+            color: rgb(255, 255, 255);
+            width: 26%;
+            height: 2.4rem;
+        }
+        
+        .text_over_signup,
+        .text_over_sign {
+            margin-bottom: 5%;
+        }
+        
+        #footer_card_quick {
+            text-align: left;
+            margin-left: 20px;
+        }
+        
+        @media screen and (max-width: 500px) {
+            .text_over_signup,
+            .text_over_sign {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 2%;
+            }
+            .text_over_signup {
+                font-size: .6 rem;
+            }
+            #footer_signup {
+                display: flex;
+                flex-direction: column;
+            }
+            input[type=submit] {
+                float: left;
+                font-size: 12px;
+            }
+            input[type=text] {
+                float: left;
+                font-size: 14px;
+            }
+            .container_of_card {
+                width: 100%;
+            }
+            .card_customer {
+                width: 100%;
+                padding: 3%;
+            }
+            .card_customer h4 {
+                font-size: 12px;
+            }
+            .card_customer h1 {
+                font-size: 15px;
+            }
+            .card_customer p {
+                font-size: 9px;
+            }
+        }
+        
+        footer {
+            background-size: 100%;
+            background-position: center center;
+            background: #302939;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+        }
+        
+        #footer_infor {
+            display: flex;
+            flex-direction: row;
+            padding: 3%;
+        }
+        
+        .footer_card {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            width: 25%;
+            /* border: 3px solid black; */
+            margin: 1%;
+            padding: 1%;
+            height: auto;
+        }
+        
+        .footer_card>ul {
+            text-align: center;
+            list-style: none;
+            text-align: left;
+        }
+        
+        .footer_card h2 {
+            color: white;
+        }
+        
+        .li_footer {
+            margin: 20px;
+            text-align: left;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .social-icons {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .social-icons li {
+            margin: 10px;
+        }
+        
+        .icon-star-full:before {
+            content: "\2605";
+            color: orange;
+        }
+        
+        #copywrite {
+            font-size: 1rem;
+            margin-top: -2rem;
+            padding: 3%;
+        }
+        
+        #social_media {
+            margin: 8px;
+            padding: 10%;
+            list-style: none;
+        }
+        
+        #social_media ul {
+            list-style: none;
+        }
+        
+        @media screen and (max-width: 800px) {
+            #footer_infor {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+            .footer_card {
+                width: 70%;
+                height: auto;
+            }
+            .footer_card h2 {
+                font-size: 25px;
+            }
+            .footer_card p {
+                font-size: 16px;
+            }
+            .li_footer {
+                font-size: 20px;
+            }
+            #copywrite {
+                font-size: 15px;
+            }
+        }
+        
+        #mainContainer {
+            width: 100%;
+        }
+        
+        .listItems {
+            color: rgb(78, 172, 230);
+            list-style: disc;
+        }
+        
+        #containerRooms {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: ghostwhite;
+        }
+        
+        #imageContainer {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            grid-gap: 1.8rem;
+            text-align: center;
+            color: black;
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+        }
+        
+        .rooms {
+            background-color: white;
+        }
+        
+        img {
+            width: 22.5rem;
+            height: 19rem;
+            margin-top: 2rem;
+            display: flex;
+            margin: auto;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 5;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black w/ opacity */
+        }
+        /* Modal Content (Image) */
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        /* Caption of Modal Image (Image Text) - Same Width as the Image */
+        
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+        /* Add Animation - Zoom in the Modal */
+        
+        .modal-content,
+        #caption {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        
+        @keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+            to {
+                transform: scale(1)
+            }
+        }
+        /* The Close Button */
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* 100% Image Width on Smaller Screens */
+        
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+            scroll-behavior: smooth;
+            transition-property: scroll-behavior;
+            transition-duration: 5s;
+        }
+        
+        .roomBookButton:hover {
+            cursor: pointer;
+            animation-name: background-color;
+            animation-duration: 50s;
+            animation-delay: 0msz;
+        }
+        
+        .roomBookButtonDiv {
+            color: white;
+        }
+        
+        @keyframes background-color {
+            2% {
+                background-color: rgb(132, 182, 212);
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            /* #text_for_above_img{
+        margin: auto;
+        font-size: 50%;
+    } */
+            #imageContainer {
+                width: fit-content;
+                display: inline-block;
+                align-content: center;
+                text-align: center;
+                color: black;
+            }
+            #maincontainer {
+                width: 100vw;
+            }
+            body {
+                width: 100vw;
+            }
+            #containerRooms {
+                width: 100vw;
+                display: block;
+                margin-left: 10vw;
+                align-content: center;
+                background-color: ghostwhite;
+            }
+            .rooms {
+                display: block;
+            }
+            .orangeButton {
+                left: 10px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="footer_css.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
+</head>
+
+<body>
+    <div id="pagestart"></div>
+
+    <div class="blackscreen">
+        <div class="navbar">
+            <div class="left_part">
+                <p class="name_logo">TravelKaro</p>
+                <p class="hamburger" id="hamburger">&#9776;</p>
+            </div>
+            <div class="right_part">
+                <ul>
+                    <li>
+                        <a href="../index.html" style="text-decoration: none;">Home</a>
+                    </li>
+                    <li>
+                        <a href="rooms.html" style="text-decoration: none;">Rooms </a>
+                    </li>
+                    <li><a href="../dining/dining_page.html" style="text-decoration: none;">Dining</a></li>
+                    <li><a href="../about_us/about.html" style="text-decoration: none;">About</a></li>
+                    <li><a href="../contact/contact.html" style="text-decoration: none;">Contact</a></li>
+                    <!-- <p class="hamburger">&#9776;</p> -->
+                </ul>
+                <!-- <p class="hamburger">&#9776;</p> -->
+            </div>
+        </div>
+
+        <div id="mainContainer">
+            <div id="headerdiv">
+                <div id="above_background_img">
+                    <img src="ximg_bg_5.jpg.pagespeed.ic.8vxyMrzQOc.jpeg" id="img_background_above">
+                    <div id="color_for_above_img"></div>
+                    <div id="text_for_above_img">
+                        <h4 style="position: relative;top: 0.5em;">Choose our Best</h4>
+                        <h1 style="font-size: 35px;position:relative;top:1rem;">Rooms & Suites</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="listAfterHeader">
+            <!-- <ul style="margin-left:3vw;">
+                <li><span class="listItems">Previous</span></li>
+                <li><span class="listItems">Next</span></li>
+            </ul> -->
+        </div>
+        <div id="containerRooms">
+            <div id="imageContainer">
+                <div id="room1image" class="rooms">
+                    <img id="room1" class="roomimage" src="https://preview.colorlib.com/theme/luxehotel/images/xroom-1.jpg.pagespeed.ic.Ywdic6s9mH.webp"><br><br>
+                    <img src="data:image/jpeg;base64,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"
+                        style="width:78px;height:35px;margin-top: -7px;"><br>
+                    <h3 style="margin: auto;color: black;color:black ;font-size: 1.4rem; margin-top: -12px;"><a href="rooms.html">Suite</a></h3><br>
+                    <div style="height:4rem;width:100%;font-size:2rem;color: rgb(0, 132, 255);"> <span style="display: inline;font-size:x-large;">$</span>1<sub style="font-size: 2.5rem;">49</sub><span style="font-size: 1rem;display: inline;color: black;"> / per night</span></div>
+                    <div style="color: grey;margin-bottom: 1rem;">✓ only 10 rooms are available</div>
+                    <div style="color: grey;margin-bottom: 1rem;">✓ Breakfast included</div>
+                    <div style="color: grey;font-size: 1rem;">✓ Price does not include VAT and services fee</div>
+                    <div class="roomBookButtonDiv"><a href="rooms.html"><button class="roomBookButton" style="border:none;background-color:rgb(78, 172, 230);color: white;width: 120px;height:40px;font-size: 18px;margin-top: 2.6rem;margin-bottom: 2.2rem;">Book now!</button></a></div>
+                </div>
+                <div id="room2image" class="rooms">
+                    <img id="room2" class="roomimage" src="https://preview.colorlib.com/theme/luxehotel/images/room-2.jpg"><br><br>
+                    <img src="data:image/jpeg;base64,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"
+                        style="width:78px;height:14px;"><br>
+                    <h3 style="margin: auto;color: black;color:black ;font-size: 1.4rem;"><a href="rooms.html">Double Room</a></h3><br>
+                    <div style="height:4rem;width:100%;font-size:2rem;color: rgb(0, 132, 255);"> <span style="display: inline;font-size:x-large;">$</span>1<sub style="font-size: 2.5rem;">99</sub><span style="font-size: 1rem;display: inline;color: black;"> / per night</span></div>
+                    <div style="color: grey;margin-bottom: 1rem;">✓ Perfect for traveling couples</div>
+                    <div style="color: grey;margin-bottom: 1rem;">✓ Breakfast included</div>
+                    <div style="color: grey;font-size: 1rem;">✓ Price does not include VAT and services fee</div>
+                    <div class="roomBookButtonDiv"><a href=""><button class="roomBookButton" style="border:none;background-color:rgb(78, 172, 230);border-radius:20px;color: white;width: 120px;height:40px;font-size: 18px;margin-top: 2.6rem;margin-bottom: 2.2rem;">Book now!</button></a></div>
+                </div>
+                <div id="room3image" class="rooms">
+                    <img id="room3" src="https://preview.colorlib.com/theme/luxehotel/images/room-3.jpg"><br><br>
+                    <img src="data:image/jpeg;base64,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"
+                        style="width:78px;height:14px;"><br>
+                    <h3 style="margin: auto;color: black;color:black ;font-size: 1.4rem;"><a href="rooms.html">Double Room</a></h3><br>
+                    <div style="height:4rem;width:100%;font-size:2rem;color: rgb(0, 132, 255);"> <span style="display: inline;font-size:x-large;">$</span>2<sub style="font-size: 2.5rem;">49</sub><span style="font-size: 1rem;display: inline;color: black;"> / per night</span></div>
+                    <div style="color: grey;margin-bottom: 1rem;">✓ Two double beds</div>
+                    <div style="color: grey;margin-bottom: 1rem;">✓ Babysitting facilities</div>
+                    <div style="color: grey;font-size: 1rem;">✓ 1 free bed available on request</div>
+                    <div class="roomBookButtonDiv"><a href=""><button class="roomBookButton" style="border:none;background-color:rgb(78, 172, 230);border-radius:20px;color: white;width: 120px;height:40px;font-size: 18px;margin-top: 2.6rem;margin-bottom: 2.2rem;">Book now!</button></a></div>
+                </div>
+                <div id="room4image" class="rooms">
+                    <img id="room4" class="roomimage" src="https://preview.colorlib.com/theme/luxehotel/images/room-4.jpg"><br><br>
+                    <img src="data:image/jpeg;base64,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"
+                        style="width:78px;height:14px;"><br>
+                    <h3 style="margin: auto;color: black;color:black ;font-size: 1.4rem;"><a href="rooms.html">Classic Double Room</a></h3><br>
+                    <div style="height:4rem;width:100%;font-size:2rem;color: rgb(0, 132, 255);"> <span style="display: inline;font-size:x-large;">$</span>1<sub style="font-size: 2.5rem;">79</sub><span style="font-size: 1rem;display: inline;color: black;"> / per night</span></div>
+                    <div style="color: grey;margin-bottom: 1rem;">✓Only 10 rooms are available</div>
+                    <div style="color: grey;margin-bottom: 1rem;">✓ Breakfast included</div>
+                    <div style="color: grey;font-size: 1rem;">✓ Price does not include VAT & services fee</div>
+                    <div class="roomBookButtonDiv"><a href=""><button class="roomBookButton" style="border:none;background-color:rgb(78, 172, 230);border-radius:20px;color: white;width: 120px;height:40px;font-size: 18px;margin-top: 2.6rem;margin-bottom: 2.2rem;">Book now!</button></a></div>
+                </div>
+                <div id="room5image" class="rooms">
+                    <img class="roomimage" src="https://preview.colorlib.com/theme/luxehotel/images/room-5.jpg" id="room5"><br><br>
+                    <img src="data:image/jpeg;base64,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"
+                        style="width:78px;height:14px;"><br>
+                    <h3 style="margin: auto;color: black;color:black ;font-size: 1.4rem;"><a href="rooms.html">Superior Double Room</a></h3><br>
+                    <div style="height:4rem;width:100%;font-size:2rem;color: rgb(0, 132, 255);"> <span style="display: inline;font-size:x-large;">$</span>2<sub style="font-size: 2.5rem;">70</sub><span style="font-size: 1rem;display: inline;color: black;"> / per night</span></div>
+                    <div style="color: grey;margin-bottom: 1rem;">✓ Perfect for traveling couples</div>
+                    <div style="color: grey;margin-bottom: 1rem;">✓ Breakfast included</div>
+                    <div style="color: grey;font-size: 1rem;">✓ Price does not include VAT & services fee</div>
+                    <div class="roomBookButtonDiv"><a href=""><button class="roomBookButton" style="border:none;background-color:rgb(78, 172, 230);border-radius:20px;color: white;width: 120px;height:40px;font-size: 18px;margin-top: 2.6rem;margin-bottom: 2.2rem;">Book now!</button></a></div>
+                </div>
+                <div id="room6image" class="rooms">
+                    <img id="room6" class="roomimage" src="https://preview.colorlib.com/theme/luxehotel/images/xroom-6.jpg.pagespeed.ic.v8SIiyIqyO.webp"><br><br>
+                    <img src="data:image/jpeg;base64,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"
+                        style="width:78px;height:14px;"><br>
+                    <h3 style="margin: auto;color: black;color:black ;font-size: 1.4rem;"><a href="rooms.html">Super Family Room</a></h3><br>
+                    <div style="height:4rem;width:100%;font-size:2rem;color: rgb(0, 132, 255);"> <span style="display: inline;font-size:x-large;">$</span>2<sub style="font-size: 2.5rem;">70</sub><span style="font-size: 1rem;display: inline;color: black;"> / per night</span></div>
+                    <div style="color: grey;margin-bottom: 1rem;">✓ Perfect for traveling couples</div>
+                    <div style="color: grey;margin-bottom: 1rem;">✓ Breakfast included</div>
+                    <div style="color: grey;font-size: 1rem;">✓ Price does not include VAT & services fee</div>
+                    <div class="roomBookButtonDiv"><a href=""><button class="roomBookButton" style="border:none;background-color:rgb(78, 172, 230);border-radius:20px;color: white;width: 120px;height:40px;font-size: 18px;margin-top: 2.6rem;margin-bottom: 2.2rem;">Book now!</button></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <a href="#pagestart" style><button class="orangeButton" style="width:3rem;border:1px solid rgba(255, 166, 0, 0.966);height:3rem;background-color:rgba(255, 153, 0, 0.938);border-radius: 5px;color: white;text-align: center;position:fixed;top: 90vh;left: 94vw;"><b><h2 style="position: relative;bottom: 3px;font-size: 1rem;z-index: 500">↑</h2></b></button>
+        </a> -->
+
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="img01">
+
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+    </div>
+
+    <!-- footer code start here -->
+
+
+    <div id="footer_image_container">
+        <img src="ximg_bg_2.jpg.pagespeed.ic.Sprx60GU2d.jpeg" id="image_background_footer">
+        <div id="opacity_of_footer"></div>
+        <div id="text_over_footer">
+            <span>
+            <i class="icon-star-full"></i>
+            <i class="icon-star-full"></i>
+            <i class="icon-star-full"></i><i class="icon-star-full"></i>
+            <i class="icon-star-full"></i>
+        </span>
+            <h1 class="text_over_signup">Sign Up for a Newsletter</h1>
+            <h5 class="text_over_sign">Get A 50% Discountd in every Rooms, Book now!</h5>
+            <form id="footer_signup">
+                <input id="footer_signup_form_text" type="text" placeholder="Enter your email">
+                <input id="footer_signup_form_bnt" type="submit" value="Subscribe">
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div id="footer_infor">
+            <div class="footer_card">
+                <h2>Luxehotel</h2>
+                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                <div id="social_media">
+                    <ul class="social-icons">
+                        <li>
+                            <a href="#" class="fa fa-facebook"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="fa fa-twitter"></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></a></i>
+                            <li>
+                                <a href="#" class="fa fa-dribbble"></a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer_card">
+                <h2 id="footer_card_quick">Quick Links</h2>
+                <ul>
+                    <li class="li_footer">Accomodation</li>
+                    <li class="li_footer">Dining & Bar</li>
+                    <li class="li_footer">Restaurants</li>
+                    <li class="li_footer">Beach & Resorts</li>
+                </ul>
+
+
+            </div>
+
+            <div class="footer_card">
+                <h2>Recents Blog Post</h2>
+                <ul>
+                    <li class="li_footer">The Ultimate Packing List For Female Travelers</li>
+                    <li class="li_footer">How These 5 People Found The Path to Their Dream Trip</li>
+                    <li class="li_footer">A Definitive Guide to the Best Dining and Drinking Venues in the City</li>
+
+                </ul>
+            </div>
+
+            <div class="footer_card">
+                <h2>Contact Information</h2>
+                <ul>
+                    <li class="li_footer">291 South 21th Street, Suite 721 New York NY 10016</li>
+                    <li class="li_footer">+ 1235 2355 98</li>
+                    <li class="li_footer">info@yoursite.com</li>
+                    <li class="li_footer">luxehotel.com</li>
+                </ul>
+            </div>
+        </div>
+        <div id="copywrite">
+            <p>Copyright ©2022 All rights reserved | This template is made with by Colorlib Demo Images: Unsplash</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    document.querySelectorAll('a[href="#pagestart"]').forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        })
+        // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("room5");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("room1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("room2");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("room3");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+
+
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("room4");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+
+
+
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("room6");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+
+    var hamburger = document.querySelector("#hamburger");
+    hamburger.addEventListener("click", show_nav);
+    var nav = document.querySelector(".right_part");
+    // var cancel = document.querySelector(".cancel");
+
+    function show_nav() {
+        // console.log(nav.style.display)
+        if (nav.style.display == "table-column") {
+            nav.style.display = "flex";
+            hamburger.innerHTML = "&#10006;"
+                // console.log("block")
+                // hamburger.addEventListener("click", close);
+        } else {
+            nav.style.display = "table-column";
+            // nav.style.top = "-100%";
+            hamburger.innerHTML = "&#9776"
+                // console.log("none")
+
+        }
+
+    }
+
+    function close() {
+        console.log("cancel clicked")
+        nav.style.display = "none";
+        hamburger.innerHTML = "&#9776"
+    }
+</script>
+</body>
+
+</html>
