@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TraveKaro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <section class="head_section">
+            <div class="navbar">
+                <div class="left_part">
+                    <p class="name_logo">TravelKaro</p>
+                    <p class="hamburger" id="hamburger">&#9776;</p>
+                </div>
+                <div class="right_part">
+                    <ul>
+                        <li>
+                            <a href="index.html" style="text-decoration: none;">Home</a>
+                        </li>
+                        <li>
+                            <a href="rooms/rooms.html" style="text-decoration: none;">Rooms </a>
+                        </li>
+                        <li><a href="dining/dining_page.html" style="text-decoration: none;">Dining</a></li>
+                        <li><a href="about_us/about.html" style="text-decoration: none;">About</a></li>
+                        <li><a href="contact/contact.html" style="text-decoration: none;">Contact</a></li>
+                        <!-- <p class="hamburger">&#9776;</p> -->
+                    </ul>
+                    <!-- <p class="hamburger">&#9776;</p> -->
+                </div>
+            </div>
+
+            <button onclick="topFunction()" id="scoll_Btn_top" title="Go to top">^</button>
+
+            <div class="slide_show" id="slide_show">
+                <div class="slide_content" id="slide_content">
+                    <div class="slide_text">
+                        <p class="slide_para" id="slide_para">Some text</p>
+                        <p class="slide_title" id="slide_title">Some detailed text</p>
+                    </div>
+                    <div class="slide_btn_grp">
+                        <button class="view_det">View Detail</button>
+                        <button class="know_more">Know More</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="body_1">
+            <div class="search">
+                <div class="search_content">
+                    <div>
+                        <p class="checkin_text">Check-in :</p>
+                        <input type="date" placeholder="checkin date" id="" />
+                    </div>
+                    <div>
+                        <p class="checkin_text">Check-out :</p>
+                        <input type="date" placeholder="checkout date" id="" />
+                    </div>
+                    <div>
+                        <p class="checkin_text">Adults :</p>
+                        <select name="slct" id="slct">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">5+</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p class="checkin_text">Childrens :</p>
+                        <select name="slct2" id="slct2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">5+</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button id="btn_search">Search</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info_grid">
+                <div class="box">
+                    <img src="undraw_work_time_re_hdyv.svg" alt="">
+                    <p class="large">24/7 Front Desk</p>
+                    <p class="small">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies</p>
+                </div>
+                <div class="box">
+                    <img src="undraw_order_ride_re_372k.svg" alt="">
+                    <p class="large">Tranfer Services</p>
+                    <p class="small">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies</p>
+                </div>
+                <div class="box">
+                    <img src="undraw_wine_tasting_-30-vw.svg" alt="">
+                    <p class="large">Restaurant & Bars</p>
+                    <p class="small">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies</p>
+                </div>
+                <div class="box">
+                    <img src="undraw_cup_of_tea_6nqg.svg" alt="">
+                    <p class="large">Spa Suites</p>
+                    <p class="small">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="body_2">
+            <div class="rooms_div">
+                <div class="room_1_text">
+                    <p class="star">&#11088;&#11088;&#11088;&#11088;&#11088;</p>
+                    <p class="border"></p>
+                    <p class="border2"></p>
+                    <p class="margin-bottom-20 slide_title">Rooms & Suites</p>
+                    <p class="room_1_text_des small">We love to tell our successful far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+
+                <div class="room_1_start">
+                    <div class="button_nex">
+                        <button class="prev" id="prev">prev</button>
+                        <button class="next" id="next">next</button>
+                    </div>
+                    <div class="room_1_div">
+                        <div class="room_box">
+                            <img id="room_img1" src="https://preview.colorlib.com/theme/luxehotel/images/xroom-6.jpg.pagespeed.ic.v8SIiyIqyO.webp" alt="">
+                            <p class="star" id="star1">&#11088;&#11088;&#11088;&#11088;&#11088;</p>
+                            <p class="room_name" id="room_name1">Suite</p>
+                            <p class="room_price" id="room_price1">$200 <span style="font-size: 0.6em; color: black;">/ per night</span></p>
+                            <p class="room_des" id="room_des_1">✓Only 10 rooms are available</p>
+                            <p class="room_des" id="room_des_2">✓Breakfast included</p>
+                            <p class="room_des" id="room_des_3">✓Price does not include VAT & services fee</p>
+                            <button class="book_now">Book Now!</button>
+                        </div>
+                        <div class="room_box none_room1">
+                            <img id="room_img2" src="https://preview.colorlib.com/theme/luxehotel/images/xroom-5.jpg.pagespeed.ic.NJ8FastZqQ.webp" alt="">
+                            <p class="star" id="star2">&#11088;&#11088;&#11088;</p>
+                            <p class="room_name" id="room_name2">Suite Deluxe</p>
+                            <p class="room_price" id="room_price2">$200 <span style="font-size: 0.6em; color: black;">/ per night</span></p>
+                            <p class="room_des" id="room_des_1">✓Only 10 rooms are available</p>
+                            <p class="room_des" id="room_des_2">✓Breakfast included</p>
+                            <p class="room_des" id="room_des_3">✓Price does not include VAT & services fee</p>
+                            <button class="book_now">Book Now!</button>
+                        </div>
+                        <div class="room_box none_room">
+                            <img id="room_img3" src="https://preview.colorlib.com/theme/luxehotel/images/xroom-2.jpg.pagespeed.ic.7_z7Rtn2ip.webp" alt="">
+                            <p class="star" id="star3">&#11088;&#11088;&#11088;&#11088;</p>
+                            <p class="room_name" id="room_name3">Suite Classic</p>
+                            <p class="room_price" id="room_price3">$200 <span style="font-size: 0.6em; color: black;">/ per night</span></p>
+                            <p class="room_des" id="room_des_1"> ✓Only 10 rooms are available</p>
+                            <p class="room_des" id="room_des_2">✓Breakfast included</p>
+                            <p class="room_des" id="room_des_3">✓Price does not include VAT & services fee</p>
+                            <button class="book_now">Book Now!</button>
+                        </div>
+                    </div>
+                    <p class="view_room" style="text-align:center;">View all rooms </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="body_3">
+            <div class="dinner_div" style="background-color: white;">
+                <div class="room_1_text">
+                    <p class="star">&#11088;&#11088;&#11088;&#11088;&#11088;</p>
+                    <p class="border"></p>
+                    <p class="border2"></p>
+                    <p class="margin-bottom-20 slide_title">Dining & Bar</p>
+                    <p class="room_1_text_des small">We love to tell our successful far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+
+                <div class="dinner_1_start">
+                    <div class="side">
+                        <div class="list_menu">
+                            <p id="mains">Mains</p>
+                            <p id="dessert">Desserts</p>
+                            <p id="drinks">Drinks</p>
+                        </div>
+                        <div class="food_menu" id="food_menu">
+                            <div class="food_card">
+                                <div class="first" id="first">
+                                    <img id="img_food1" src="https://preview.colorlib.com/theme/luxehotel/images/xmenu-3.jpg.pagespeed.ic.ZT22LEnlUf.webp" alt="">
+                                    <div class="food_det">
+                                        <p class="food_name" id="food_name1">Grilled Pork</p>
+                                        <p class="food_made" id="food_made1">Meat / Potatoes / Rice</p>
+                                    </div>
+                                </div>
+                                <p class="price" id="price1">$25.99</p>
+                            </div>
+                            <div class="food_card">
+                                <div class="first">
+                                    <img id="img_food2" src="https://preview.colorlib.com/theme/luxehotel/images/xmenu-3.jpg.pagespeed.ic.ZT22LEnlUf.webp" alt="">
+                                    <div class="food_det">
+                                        <p class="food_name" id="food_name2">Grilled Pork</p>
+                                        <p class="food_made" id="food_made2">Meat / Potatoes / Rice</p>
+                                    </div>
+                                </div>
+                                <p class="price" id="price2">$25.99</p>
+                            </div>
+                            <div class="food_card">
+                                <div class="first">
+                                    <img id="img_food3" src="https://preview.colorlib.com/theme/luxehotel/images/xmenu-3.jpg.pagespeed.ic.ZT22LEnlUf.webp" alt="">
+                                    <div class="food_det">
+                                        <p class="food_name" id="food_name3">Grilled Pork</p>
+                                        <p class="food_made" id="food_made3">Meat / Potatoes / Rice</p>
+                                    </div>
+                                </div>
+                                <p class="price" id="price3">$25.99</p>
+                            </div>
+                            <div class="food_card">
+                                <div class="first">
+                                    <img id="img_food4" src="https://preview.colorlib.com/theme/luxehotel/images/xmenu-3.jpg.pagespeed.ic.ZT22LEnlUf.webp" alt="">
+                                    <div class="food_det">
+                                        <p class="food_name" id="food_name4">Grilled Pork</p>
+                                        <p class="food_made" id="food_made4">Meat / Potatoes / Rice</p>
+                                    </div>
+                                </div>
+                                <p class="price" id="price4">$25.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side img_back"></div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section class="body_4">
+            <div class="dinner_div">
+                <div class="room_1_text">
+                    <p class="star">&#11088;&#11088;&#11088;</p>
+                    <p class="border"></p>
+                    <p class="border2"></p>
+                    <p class="margin-bottom-20 slide_title">Our Satisfied Guests says</p>
+                    <p class="room_1_text_des small">We love to tell our successful far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+
+                <div class="guests">
+                    <div class="guests_card">
+                        <img src="https://preview.colorlib.com/theme/luxehotel/images/xperson2.jpg.pagespeed.ic.bM7A7wEf72.webp" alt="">
+                        <div class="guest_text">
+                            <p class="guest_name">Brian Doe</p>
+                            <p class="customer">Satisfied Customer</p>
+                            <p class="large_para">Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                        </div>
+                    </div>
+                    <div class="guests_card">
+                        <img src="https://preview.colorlib.com/theme/luxehotel/images/xperson1.jpg.pagespeed.ic.87M3B360BS.webp" alt="">
+                        <div class="guest_text">
+                            <p class="guest_name">Nathalie Miller</p>
+                            <p class="customer">Satisfied Customer</p>
+                            <p class="large_para">Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                        </div>
+                    </div>
+                    <div class="guests_card">
+                        <img src="https://preview.colorlib.com/theme/luxehotel/images/xperson3.jpg.pagespeed.ic.7kPbN3-sHL.webp" alt="">
+                        <div class="guest_text">
+                            <p class="guest_name">Shara Jones</p>
+                            <p class="customer">Satisfied Customer</p>
+                            <p class="large_para">Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer">
+            <div id="footer_image_container">
+                <img src="https://preview.colorlib.com/theme/luxehotel/images/ximg_bg_5.jpg.pagespeed.ic.8vxyMrzQOc.webp" id="image_background_footer">
+                <div id="opacity_of_footer"></div>
+                <div id="text_over_footer">
+                    <span>
+                        <i class="icon-star-full"></i>
+                        <i class="icon-star-full"></i>
+                        <i class="icon-star-full"></i><i class="icon-star-full"></i>
+                        <i class="icon-star-full"></i>
+                    </span>
+                    <p class="text_over_signup">Sign Up for a Newsletter</p>
+                    <p class="text_over_sign">Get A 50% Discountd in every Rooms, Book now!</p>
+                    <form id="footer_signup">
+                        <input id="footer_signup_form_text" type="text" placeholder="Enter your email">
+                        <input id="footer_signup_form_bnt" type="submit" value="Subscribe">
+                    </form>
+                </div>
+            </div>
+
+            <footer>
+                <div id="footer_infor">
+                    <div class="footer_card">
+                        <h2 id="footer_card_quick" style="margin-left: 20px;">Travelkaro</h2>
+                        <p class="li_footer">Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                        <div id="social_media">
+                            <ul class="social-icons">
+                                <li>
+                                    <a href="#" class="fa fa-facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fa fa-twitter"></a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-linkedin"></a></i>
+                                    <li>
+                                        <a href="#" class="fa fa-dribbble"></a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer_card">
+                        <h2 id="footer_card_quick">Quick Links</h2>
+                        <ul>
+                            <li class="li_footer">Accomodation</li>
+                            <li class="li_footer">Dining & Bar</li>
+                            <li class="li_footer">Restaurants</li>
+                            <li class="li_footer">Beach & Resorts</li>
+                        </ul>
+
+
+                    </div>
+
+                    <div class="footer_card">
+                        <h2 id="footer_card_quick">Recents Blog Post</h2>
+                        <ul>
+                            <li class="li_footer">The Ultimate Packing List For Female Travelers</li>
+                            <li class="li_footer">How These 5 People Found The Path to Their Dream Trip</li>
+                            <li class="li_footer">A Definitive Guide to the Best Dining and Drinking Venues in the City</li>
+
+                        </ul>
+                    </div>
+
+                    <div class="footer_card">
+                        <h2 id="footer_card_quick">Contact Information</h2>
+                        <ul>
+                            <li class="li_footer">291 South 21th Street, Suite 721 New York NY 10016</li>
+                            <li class="li_footer">+ 1235 2355 98</li>
+                            <li class="li_footer">info@Travelkaro.com</li>
+                            <li class="li_footer">Travelkaro.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="copywrite">
+                    <p style="margin: 20px auto 10px auto;">Copyright ©2022 All rights reserved | The Whole website is made by TravelKaro Group.</p>
+                </div>
+            </footer>
+        </section>
+
+</body>
+
+<script>
+    var mybutton = document.getElementById("scoll_Btn_top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
+    var slide_data = [{
+        image: "https://preview.colorlib.com/theme/luxehotel/images/ximg_bg_2.jpg.pagespeed.ic.Sprx60GU2d.webp",
+        para: "You're Invited",
+        title: "We Know how to please you"
+    }, {
+        image: "https://preview.colorlib.com/theme/luxehotel/images/ximg_bg_5.jpg.pagespeed.ic.8vxyMrzQOc.webp",
+        para: "Come and Enjoy the unforgotten nights",
+        title: "In the heart of TravelKaro"
+    }, {
+        image: "https://preview.colorlib.com/theme/luxehotel/images/ximg_bg_1.jpg.pagespeed.ic.0xFNn6r7lO.webp",
+        para: "Welcome to TraveKaro",
+        title: "A solution for your stay"
+    }, {
+        image: "https://preview.colorlib.com/theme/luxehotel/images/ximg_bg_5.jpg.pagespeed.ic.8vxyMrzQOc.webp",
+        para: "Discover and enjoy",
+        title: "Everything you need is here."
+    }];
+
+    var mains_foods = [{
+        img: "https://preview.colorlib.com/theme/luxehotel/images/xmenu-1.jpg.pagespeed.ic.dJHLVRgvgP.webp",
+        name: "Grilled Pork",
+        des: "Meat / Potatoes / Rice",
+        price: "$25.99"
+    }, {
+        img: "https://preview.colorlib.com/theme/luxehotel/images/xmenu-2.jpg.pagespeed.ic.TW61tnd-aA.webp",
+        name: "Tuna Roast Source",
+        des: "Tuna / Potatoes / Rice",
+        price: "$30.99"
+    }, {
+        img: "https://preview.colorlib.com/theme/luxehotel/images/xmenu-3.jpg.pagespeed.ic.ZT22LEnlUf.webp",
+        name: "Roast Beef (4 sticks)",
+        des: "Crab / Potatoes / Rice",
+        price: "$40.00"
+    }, {
+        img: "https://preview.colorlib.com/theme/luxehotel/images/xmenu-4.jpg.pagespeed.ic.jBEhJOcm4_.webp",
+        name: "Salted Fried Chicken",
+        des: "Crab / Potatoes / Rice",
+        price: "$20.50"
+    }];
+
+    var deserts = [{
+        img: "data:image/jpeg;base64,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",
+        name: "Frozen yogurt",
+        des: "Meat / Potatoes / Rice",
+        price: "$12.99"
+    }, {
+        img: "https://www.biggerbolderbaking.com/wp-content/uploads/2014/07/BBB24-Ice-Cream-Cookie-Sandwiches-Thumbnail-v.1.jpg",
+        name: "Ice cream sandwich",
+        des: "Meat / Potatoes / Cream",
+        price: "$4.90"
+    }, {
+        img: "data:image/jpeg;base64,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",
+        name: "Eclair",
+        des: "Meat / Rice",
+        price: "$2.55"
+    }, {
+        img: "data:image/jpeg;base64,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",
+        name: "Cupcake",
+        des: "Meat / cake / Rice",
+        price: "$20.88"
+    }, ];
+
+
+    var rooms_data = [{
+        img: "https://preview.colorlib.com/theme/luxehotel/images/xroom-6.jpg.pagespeed.ic.v8SIiyIqyO.webp",
+        star: 3,
+        name: "suite",
+        price: "$200"
+    }, {
+        img: "https://preview.colorlib.com/theme/luxehotel/images/xroom-5.jpg.pagespeed.ic.NJ8FastZqQ.webp",
+        star: 4,
+        name: "Deluxe",
+        price: "$250"
+    }, {
+        img: "https://preview.colorlib.com/theme/luxehotel/images/xroom-4.jpg.pagespeed.ic._GJEB3TiRU.webp",
+        star: 5,
+        name: "Ultra Deluxe",
+        price: "$300"
+    }, {
+        img: "https://preview.colorlib.com/theme/luxehotel/images/xroom-3.jpg.pagespeed.ic.Jpanx-Epxq.webp",
+        star: 3,
+        name: "Family Room",
+        price: "$250"
+    }, {
+        img: "https://preview.colorlib.com/theme/luxehotel/images/xroom-2.jpg.pagespeed.ic.7_z7Rtn2ip.webp",
+        star: 4,
+        name: "Double Room",
+        price: "$400"
+    }, {
+        img: "https://preview.colorlib.com/theme/luxehotel/images/xroom-1.jpg.pagespeed.ic.Ywdic6s9mH.webp",
+        star: 5,
+        name: "Classic Double Room",
+        price: "$500"
+    }]
+
+    var star_data = "&#11088;"
+    var hamburger = document.querySelector("#hamburger");
+    hamburger.addEventListener("click", show_nav);
+    var nav = document.querySelector(".right_part");
+    // var cancel = document.querySelector(".cancel");
+
+    function show_nav() {
+        // console.log(nav.style.display)
+        if (nav.style.display == "table-column") {
+            nav.style.display = "flex";
+            hamburger.innerHTML = "&#10006;"
+                // console.log("block")
+                // hamburger.addEventListener("click", close);
+        } else {
+            nav.style.display = "table-column";
+            // nav.style.top = "-100%";
+            hamburger.innerHTML = "&#9776"
+                // console.log("none")
+
+        }
+
+    }
+
+    function close() {
+        console.log("cancel clicked")
+        nav.style.display = "none";
+        hamburger.innerHTML = "&#9776"
+    }
+    var slide_show = document.querySelector("#slide_show");
+    // console.log(slide_content);
+    var slide_para = document.querySelector("#slide_para");
+    var slide_title = document.querySelector("#slide_title");
+
+    var id = 0;
+
+    var set = setInterval(() => {
+        setSlide();
+    }, 2000);
+
+    function setSlide() {
+        // console.log("ok");
+        slide_show.style.backgroundImage = `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), 
+rgba(0, 90, 9, 0.3)),url(${slide_data[id].image})`;
+        // console.log("slide_data[id].image", slide_data[id].image)
+        slide_para.innerText = slide_data[id].para;
+        slide_title.innerText = slide_data[id].title;
+        // console.log("slide_data[id].title", slide_data[id].title)
+
+        id++;
+
+        if (id == 3) {
+            id = 0;
+        }
+    }
+
+
+    //Rooms slide show and button
+    var rooms_img1 = document.querySelector("#room_img1");
+    var rooms_img2 = document.querySelector("#room_img2");
+    var rooms_img3 = document.querySelector("#room_img3");
+
+    var star1 = document.querySelector("#star1");
+    var star2 = document.querySelector("#star2");
+    var star3 = document.querySelector("#star3");
+
+    var room_name1 = document.querySelector("#room_name1");
+    var room_name2 = document.querySelector("#room_name2");
+    var room_name3 = document.querySelector("#room_name3");
+
+    var room_price1 = document.querySelector("#room_price1");
+    var room_price2 = document.querySelector("#room_price2");
+    var room_price3 = document.querySelector("#room_price3");
+
+    var set_room = setInterval(() => {
+        set_room_slide();
+    }, 3000);
+    var id_room = 0;
+
+    function set_room_slide() {
+        if (id_room > 5) {
+            id_room = 0;
+        }
+        room_img1.src = rooms_data[id_room].img;
+        star1.innerHTML = star_data.repeat(rooms_data[id_room].star);
+        room_name1.innerText = rooms_data[id_room].name;
+        room_price1.innerHTML = `${rooms_data[id_room].price}<span style="font-size: 0.6em; color: black;">/ per night</span>`;
+        id_room++;
+        room_img2.src = rooms_data[id_room].img;
+        star2.innerHTML = star_data.repeat(rooms_data[id_room].star);
+        room_name2.innerText = rooms_data[id_room].name;
+        room_price2.innerHTML = `${rooms_data[id_room].price}<span style="font-size: 0.6em; color: black;">/ per night</span>`;
+        id_room++;
+        room_img3.src = rooms_data[id_room].img;
+        star3.innerHTML = star_data.repeat(rooms_data[id_room].star);
+        room_name3.innerText = rooms_data[id_room].name;
+        room_price3.innerHTML = `${rooms_data[id_room].price}<span style="font-size: 0.6em; color: black;">/ per night</span>`;
+        id_room++;
+
+        if (id_room > 5) {
+            id_room = 0;
+        }
+    }
+
+
+    var prev = document.querySelector("#prev");
+    var next = document.querySelector("#next");
+
+    prev.addEventListener("click", previous);
+    next.addEventListener("click", next_);
+
+    function previous() {
+        console.log(id_room)
+        id_room--;
+        room_img1.src = rooms_data[id_room].img;
+        star1.innerHTML = star_data.repeat(rooms_data[id_room].star);
+        room_name1.innerText = rooms_data[id_room].name;
+        room_price1.innerHTML = `${rooms_data[id_room].price}<span style="font-size: 0.6em; color: black;">/ per night</span>`;
+        id_room--;
+        room_img2.src = rooms_data[id_room].img;
+        star2.innerHTML = star_data.repeat(rooms_data[id_room].star);
+        room_name2.innerText = rooms_data[id_room].name;
+        room_price2.innerHTML = `${rooms_data[id_room].price}<span style="font-size: 0.6em; color: black;">/ per night</span>`;
+        id_room--;
+        room_img3.src = rooms_data[id_room].img;
+        star3.innerHTML = star_data.repeat(rooms_data[id_room].star);
+        room_name3.innerText = rooms_data[id_room].name;
+        room_price3.innerHTML = `${rooms_data[id_room].price}<span style="font-size: 0.6em; color: black;">/ per night</span>`;
+        id_room--;
+        if (id_room < 0 || id_room > 5) {
+            id_room = 0;
+        }
+        console.log(id_room)
+
+    }
+
+    function next_() {
+        console.log(id_room)
+        id_room++;
+        room_img1.src = rooms_data[id_room].img;
+        star1.innerHTML = star_data.repeat(rooms_data[id_room].star);
+        room_name1.innerText = rooms_data[id_room].name;
+        room_price1.innerHTML = `${rooms_data[id_room].price}<span style="font-size: 0.6em; color: black;">/ per night</span>`;
+        id_room++;
+        room_img2.src = rooms_data[id_room].img;
+        star2.innerHTML = star_data.repeat(rooms_data[id_room].star);
+        room_name2.innerText = rooms_data[id_room].name;
+        room_price2.innerHTML = `${rooms_data[id_room].price}<span style="font-size: 0.6em; color: black;">/ per night</span>`;
+        id_room++;
+        room_img3.src = rooms_data[id_room].img;
+        star3.innerHTML = star_data.repeat(rooms_data[id_room].star);
+        room_name3.innerText = rooms_data[id_room].name;
+        room_price3.innerHTML = `${rooms_data[id_room].price}<span style="font-size: 0.6em; color: black;">/ per night</span>`;
+        id_room++;
+        if (id_room < 0 || id_room > 5) {
+            id_room = 0;
+        }
+        console.log(id_room)
+
+    }
+    //food section clicking
+    var main = document.querySelector("#mains");
+    var dessert = document.querySelector("#dessert");
+    var drinks = document.querySelector("#drinks");
+
+    main.addEventListener("click", show_mains);
+    dessert.addEventListener("click", show_dessert);
+    drinks.addEventListener("click", show_drinks);
+
+    var img_food1 = document.querySelector("#img_food1");
+    var food_name1 = document.querySelector("#food_name1");
+    var food_made1 = document.querySelector("#food_made1");
+    var price1 = document.querySelector("#price1");
+
+    var img_food2 = document.querySelector("#img_food2");
+    var food_name2 = document.querySelector("#food_name2");
+    var food_made2 = document.querySelector("#food_made2");
+    var price2 = document.querySelector("#price2");
+
+    var img_food3 = document.querySelector("#img_food3");
+    var food_name3 = document.querySelector("#food_name3");
+    var food_made3 = document.querySelector("#food_made3");
+    var price3 = document.querySelector("#price3");
+
+    var img_food4 = document.querySelector("#img_food4");
+    var food_name4 = document.querySelector("#food_name4");
+    var food_made4 = document.querySelector("#food_made4");
+    var price4 = document.querySelector("#price4");
+
+
+
+    function show_mains() {
+        // console.log("food clicked");
+        img_food1.src = `${mains_foods[0].img}`;
+        food_name1.innerText = mains_foods[0].name;
+        food_made1.innerText = mains_foods[0].des;
+        price1.innerText = mains_foods[0].price;
+        // console.log(`food_name${id1}`);
+        // console.log(food_name `${id1}`)
+        img_food2.src = `${mains_foods[1].img}`;
+        food_name2.innerText = mains_foods[1].name;
+        food_made2.innerText = mains_foods[1].des;
+        price2.innerText = mains_foods[1].price;
+
+        //3
+        img_food3.src = `${mains_foods[2].img}`;
+        food_name3.innerText = mains_foods[2].name;
+        food_made3.innerText = mains_foods[2].des;
+        price3.innerText = mains_foods[2].price;
+        //4
+        img_food4.src = `${mains_foods[3].img}`;
+        food_name4.innerText = mains_foods[3].name;
+        food_made4.innerText = mains_foods[3].des;
+        price4.innerText = mains_foods[3].price;
+
+    }
+
+
+    function show_dessert() {
+        // console.log("desert clicked");
+        img_food1.src = `${deserts[0].img}`;
+        food_name1.innerText = deserts[0].name;
+        food_made1.innerText = deserts[0].des;
+        price1.innerText = deserts[0].price;
+        // console.log(`food_name${id1}`);
+        // console.log(food_name `${id1}`)
+        img_food2.src = `${deserts[1].img}`;
+        food_name2.innerText = deserts[1].name;
+        food_made2.innerText = mains_foods[1].des;
+        price2.innerText = mains_foods[1].price;
+
+        //3
+        img_food3.src = `${deserts[2].img}`;
+        food_name3.innerText = deserts[2].name;
+        food_made3.innerText = deserts[2].des;
+        price3.innerText = deserts[2].price;
+        //4
+        img_food4.src = `${deserts[3].img}`;
+        food_name4.innerText = deserts[3].name;
+        food_made4.innerText = deserts[3].des;
+        price4.innerText = deserts[3].price;
+    }
+
+    function show_drinks() {
+        // console.log("drinks clicked");
+        img_food1.src = `${mains_foods[0].img}`;
+        food_name1.innerText = mains_foods[0].name;
+        food_made1.innerText = mains_foods[0].des;
+        price1.innerText = mains_foods[0].price;
+        // console.log(`food_name${id1}`);
+        // console.log(food_name `${id1}`)
+        img_food2.src = `${mains_foods[1].img}`;
+        food_name2.innerText = mains_foods[1].name;
+        food_made2.innerText = mains_foods[1].des;
+        price2.innerText = mains_foods[1].price;
+
+        //3
+        img_food3.src = `${mains_foods[2].img}`;
+        food_name3.innerText = mains_foods[2].name;
+        food_made3.innerText = mains_foods[2].des;
+        price3.innerText = mains_foods[2].price;
+        //4
+        img_food4.src = `${mains_foods[3].img}`;
+        food_name4.innerText = mains_foods[3].name;
+        food_made4.innerText = mains_foods[3].des;
+        price4.innerText = mains_foods[3].price;
+    }
+</script>
+
+</html>
