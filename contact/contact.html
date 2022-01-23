@@ -12,13 +12,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="footer.css">
     <!-- <style>
 
         
     </style> -->
 </head>
 <body>
-    <header></header>
+    <section class="head_section">
+        <div class="navbar">
+            <div class="left_part">
+                <p class="name_logo">TravelKaro</p>
+                <p class="hamburger" id="hamburger">&#9776;</p>
+            </div>
+            <div class="right_part">
+                <ul>
+                    <li>Home</li>
+                    <li>Rooms</li>
+                    <li>About Us</li>
+                    <li>Contact</li>
+                    <!-- <p class="hamburger">&#9776;</p> -->
+                </ul>
+                <!-- <p class="hamburger">&#9776;</p> -->
+            </div>
+        </div>
+    
+        <div id="above_background_img">
+            <img src="ximg_bg_5.jpg.pagespeed.ic.8vxyMrzQOc.jpeg" id="img_background_above">
+            <div id="color_for_above_img"></div>
+            <div id="text_for_above_img">
+                <h3>Get in touch</h3>
+                <h1>Contact Us</h1>
+            </div>
+        </div>    
+        
+    </section>
     <div id="contactSection">
         <div id="form_div">
             <div id="contact_us">
@@ -101,7 +130,89 @@
             </section>
         </div>
     </div>
-    <footer></footer>
+    
+    <!-- footer code start here  -->
+
+    <section class="footer">
+        <div id="footer_image_container">
+            <img src="ximg_bg_2.jpg.pagespeed.ic.Sprx60GU2d.jpeg" id="image_background_footer">
+            <div id="opacity_of_footer"></div>
+            <div id="text_over_footer">
+                <span>
+                    <i class="icon-star-full"></i>
+                    <i class="icon-star-full"></i>
+                    <i class="icon-star-full"></i><i class="icon-star-full"></i>
+                    <i class="icon-star-full"></i>
+                </span>
+                <p class="text_over_signup">Sign Up for a Newsletter</p>
+                <p class="text_over_sign">Get A 50% Discountd in every Rooms, Book now!</p>
+                <form id="footer_signup">
+                    <input id="footer_signup_form_text" type="text" placeholder="Enter your email">
+                    <input id="footer_signup_form_bnt" type="submit" value="Subscribe">
+                </form>
+            </div>
+        </div>
+    
+        <footer>
+            <div id="footer_infor">
+                <div class="footer_card">
+                    <h2 id="footer_card_quick" style="margin-left: 20px;">Luxehotel</h2>
+                    <p class="li_footer">Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                    <div id="social_media">
+                        <ul class="social-icons">
+                            <li>
+                                <a href="#" class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="fa fa-twitter"></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></a></i>
+                                <li>
+                                    <a href="#" class="fa fa-dribbble"></a>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="footer_card">
+                    <h2 id="footer_card_quick">Quick Links</h2>
+                    <ul>
+                        <li class="li_footer">Accomodation</li>
+                        <li class="li_footer">Dining & Bar</li>
+                        <li class="li_footer">Restaurants</li>
+                        <li class="li_footer">Beach & Resorts</li>
+                    </ul>
+    
+    
+                </div>
+    
+                <div class="footer_card">
+                    <h2 id="footer_card_quick">Recents Blog Post</h2>
+                    <ul>
+                        <li class="li_footer">The Ultimate Packing List For Female Travelers</li>
+                        <li class="li_footer">How These 5 People Found The Path to Their Dream Trip</li>
+                        <li class="li_footer">A Definitive Guide to the Best Dining and Drinking Venues in the City</li>
+    
+                    </ul>
+                </div>
+    
+                <div class="footer_card">
+                    <h2 id="footer_card_quick">Contact Information</h2>
+                    <ul>
+                        <li class="li_footer">291 South 21th Street, Suite 721 New York NY 10016</li>
+                        <li class="li_footer">+ 1235 2355 98</li>
+                        <li class="li_footer">info@yoursite.com</li>
+                        <li class="li_footer">luxehotel.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="copywrite">
+                <p>Copyright ©2022 All rights reserved | The Whole website is made by TravelKaro Group.</p>
+            </div>
+        </footer>
+    </section>
+    
+
 
     <script>
         var form = document.querySelector('form');
@@ -137,6 +248,35 @@
             
             localStorage.setItem(email,data)
             console.log(localStorage)
+        }
+    </script>
+    <script>
+        var hamburger = document.querySelector("#hamburger");
+        hamburger.addEventListener("click", show_nav);
+        var nav = document.querySelector(".right_part");
+        // var cancel = document.querySelector(".cancel");
+    
+        function show_nav() {
+            // console.log(nav.style.display)
+            if (nav.style.display == "table-column") {
+                nav.style.display = "flex";
+                hamburger.innerHTML = "&#10006;"
+                    // console.log("block")
+                    // hamburger.addEventListener("click", close);
+            } else {
+                nav.style.display = "table-column";
+                // nav.style.top = "-100%";
+                hamburger.innerHTML = "&#9776"
+                    // console.log("none")
+    
+            }
+    
+        }
+    
+        function close() {
+            console.log("cancel clicked")
+            nav.style.display = "none";
+            hamburger.innerHTML = "&#9776"
         }
     </script>
 </body>
