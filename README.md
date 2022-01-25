@@ -18,5 +18,6 @@ A fully responsive website that provides Rooms and dining, Named #TravelKaro
 
 -> Fully responsive webpage for large and small screen.
 ![alt text](screenShots/screenshot06.png "Landing Page with nav and slide show.")
+
 -> Fully responsive webpage for large and small screen.
 ![alt text](screenShots/screenshot07.png "Landing Page with nav and slide show.")
